@@ -24,7 +24,7 @@ exports.up = function(knex) {
       .references("id")
       .inTable("projects")
       .onDelete("RESTRICT")
-      ontimeupdate("CASCADE");
+      .onUpdate("CASCADE");
   })
   .createTable('project_task_resources', tbl => {
       tbl.increments();
