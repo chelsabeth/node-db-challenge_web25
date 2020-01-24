@@ -24,10 +24,9 @@ function getTasks() {
     // SELECT projects.name, projects.description, tasks.project_id, tasks.description, tasks.notes
     // FROM projects, tasks
     // WHERE projects.id = tasks.project_id;
-    return db
-    .select('projects.name', 'projects.description', 'tasks.project_id', 'tasks.description', 'tasks.notes')
-    .from('projects', 'tasks')
-    .where('projects.id', '=', 'tasks.project_id');
+    return db('tasks')
+    .join('projects', 'projects.id', 'tasks.project_id')
+    .select('projects.name', 'projects.description', 'tasks.description', 'tasks.notes');
 }
 
 function addProject(project) {

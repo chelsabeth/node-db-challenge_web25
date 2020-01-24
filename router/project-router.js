@@ -30,7 +30,7 @@ router.get("/tasks", (req, res) => {
         res.json(tasks);
     })
     .catch(err => {
-        res.status(500).json({message: "Failed to get tasks"})
+        res.status(500).json({message: `Failed to get tasks ${err}`})
     });
 });
 

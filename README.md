@@ -76,7 +76,7 @@ Complete the following tasks:
   - [X] adding projects.
   - [X] retrieving a list of projects.
   - [X] adding tasks.
-  - [ ] retrieving a list of tasks. **The list of tasks should include the project name and project description**.
+  - [X] retrieving a list of tasks. **The list of tasks should include the project name and project description**.
 
 ### Entities
 
