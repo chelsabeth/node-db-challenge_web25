@@ -5,11 +5,18 @@ exports.up = function(knex) {
       tbl.increments();
       tbl.string('name').notNullable();
       tbl.string('description');
+       // project_id...foreign key that points to projects table
+       tbl.integer("project_id")
+      .unsigned()
+      .references("id")
+      .inTable("projects")
+      .onDelete("RESTRICT")
+      .onUpdate("CASCADE");
   })
   .createTable('projects', tbl => {
       tbl.increments();
       tbl.string('name').notNullable();
-      tbl.string('description')
+      tbl.string('description');
       tbl.boolean('completed').defaultTo(false);
   })
   .createTable('tasks', tbl => {
